@@ -1,0 +1,31 @@
+"ACL":
+  url: https://aclweb.org
+  color: "#cc241d"
+
+"EACL":
+  url: https://eacl.org
+  color: "#cc241d"
+
+"EMNLP":
+  url: https://emnlp.org
+  color: "#cc241d"
+
+"arXiv":
+  url: https://arxiv.org
+  color: "#cc241d"
+
+"ICLR":
+  url: https://iclr.cc
+  color: "#98971a"
+
+"NeurIPS":
+  url: https://neurips.cc
+  color: "#b16286"
+
+"ICCV":
+  url: https://iccv.thecvf.com
+  color: "#458588"
+
+"MLWA":
+  url: https://www.sciencedirect.com/journal/machine-learning-with-applications
+  color: "#b16286"

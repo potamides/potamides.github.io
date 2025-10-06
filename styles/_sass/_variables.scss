@@ -1,0 +1,69 @@
+/*******************************************************************************
+ * Variables used throughout the theme.
+ * To adjust anything, simply edit the variables below and rebuild the theme.
+ ******************************************************************************/
+
+@use "sass:color";
+
+// Colors
+$gb-dark0-hard: #1d2021 !default;
+$gb-dark0: #282828 !default;
+$gb-dark0-soft: #32302f !default;
+$gb-dark1: #3c3836 !default;
+$gb-dark2: #504945 !default;
+$gb-dark3: #665c54 !default;
+$gb-dark4: #7c6f64 !default;
+$gb-dark4-256: #7c6f64 !default;
+
+$gb-gray-245: #928374 !default;
+$gb-gray-244: #928374 !default;
+
+$gb-light0-hard: #f9f5d7 !default;
+$gb-light0: #fbf1c7 !default;
+$gb-light0-soft: #f2e5bc !default;
+$gb-light1: #ebdbb2 !default;
+$gb-light2: #d5c4a1 !default;
+$gb-light3: #bdae93 !default;
+$gb-light4: #a89984 !default;
+$gb-light4-256: #a89984 !default;
+
+$gb-bright-red: #fb4934 !default;
+$gb-bright-green: #b8bb26 !default;
+$gb-bright-yellow: #fabd2f !default;
+$gb-bright-blue: #83a598 !default;
+$gb-bright-purple: #d3869b !default;
+$gb-bright-aqua: #8ec07c !default;
+$gb-bright-orange: #fe8019 !default;
+
+$gb-neutral-red: #cc241d !default;
+$gb-neutral-green: #98971a !default;
+$gb-neutral-yellow: #d79921 !default;
+$gb-neutral-blue: #458588 !default;
+$gb-neutral-purple: #b16286 !default;
+$gb-neutral-aqua: #689d6a !default;
+$gb-neutral-orange: #d65d0e !default;
+
+$gb-faded-red: #9d0006 !default;
+$gb-faded-green: #79740e !default;
+$gb-faded-yellow: #b57614 !default;
+$gb-faded-blue: #076678 !default;
+$gb-faded-purple: #8f3f71 !default;
+$gb-faded-aqua: #427b58 !default;
+$gb-faded-orange: #af3a03 !default;
+
+$black-color: $gb-dark0 !default;
+$white-color: $gb-light0 !default;
+
+// Font awesome location
+$fa-font-path: "../webfonts";
+
+// Tabler icons location
+$ti-font-path: "../fonts";
+
+// Back To Top button config
+$back-to-top-z-index: 10;
+$back-to-top-bottom: 30px;
+$back-to-top-right: 30px;
+$back-to-top-diameter: 40px;
+$back-to-top-height: $back-to-top-diameter;
+$back-to-top-width: $back-to-top-diameter;
