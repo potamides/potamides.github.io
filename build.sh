@@ -12,7 +12,7 @@ rm -rf "$BUILD_DIR/.git"
 
 for file in _bibliography _data _news _pages _posts _config.yml; do
   rm -r "${BUILD_DIR:?}/$file"
-  cp -r "${file#_}" "$BUILD_DIR/$file"
+  cp -r "contents/${file#_}" "$BUILD_DIR/$file"
 done
 
 for file in ./assets/* styles/*; do
