@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://potamides.github.io/sitemap.xml
+Sitemap: https://belouadi.com/sitemap.xml
