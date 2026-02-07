@@ -180,7 +180,6 @@ exclude:
   - _pages/teaching.md
   - _pages/projects.md
   - _pages/dropdown.md
-  - _pages/cv.md
   - _pages/books.md
 keep_files:
   - CNAME
