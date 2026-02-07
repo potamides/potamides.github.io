@@ -1,3 +1,19 @@
+@inproceedings{belouadi2026multimat,
+  abstract    = {Material node graphs are programs that generate the 2D channels of procedural materials, including geometry such as roughness and displacement maps, and reflectance such as albedo and conductivity maps. They are essential in computer graphics for representing the appearance of virtual 3D objects parametrically and at arbitrary resolution. In particular, their directed acyclic graph structure and intermediate states enable a modular, interpretable workflow for interactive appearance modeling. However, creating such graphs remains challenging and typically requires professional training. While recent neural program synthesis approaches attempt to simplify this process, they solely represent graphs as textual programs, failing to capture the inherently visual-spatial nature of node graphs that makes them accessible to humans. To address this gap, we present MultiMat, a multimodal program synthesis framework that leverages large multimodal models to process both visual and textual graph representations for improved generation of procedural material graphs. We train our models on a new dataset of production-quality procedural materials and combine them with a constrained tree search inference algorithm that ensures static correctness while efficiently navigating the program space. Our experimental results show that our multimodal program synthesis method is more efficient in both unconditional and conditional graph synthesis with higher visual quality and fidelity than text-only baselines, establishing new state-of-the-art performance.},
+  author      = {Belouadi, Jonas and Boubekeur, Tamy and Kaiser, Adrien},
+  location    = {Rio de Janeiro, Brazil},
+  url         = {https://openreview.net/forum?id=QzWXBy83kf},
+  abbr        = {ICLR},
+  arxiv       = {2509.22151},
+  bibtex_show = {true},
+  booktitle   = {The Fourteenth International Conference on Learning Representations},
+  pdf         = {https://openreview.net/pdf?id=QzWXBy83kf},
+  month       = apr,
+  selected    = {true},
+  title       = {{MultiMat}: Multimodal Program Synthesis for Procedural Materials using Large Multimodal Models},
+  year        = {2026},
+}
+
 @inproceedings{belouadi2025tikzero,
   abstract    = {Automatically synthesizing figures from text captions is a compelling capability. However, achieving high geometric precision and editability requires representing figures as graphics programs in languages like TikZ, and aligned training data (i.e., graphics programs with captions) remains scarce. Meanwhile, large amounts of unaligned graphics programs and captioned raster images are more readily available. We reconcile these disparate data sources by presenting TikZero, which decouples graphics program generation from text understanding by using image representations as an intermediary bridge. It enables independent training on graphics programs and captioned images and allows for zero-shot text-guided graphics program synthesis during inference. We show that our method substantially outperforms baselines that can only operate with caption-aligned graphics programs. Furthermore, when leveraging caption-aligned graphics programs as a complementary training signal, TikZero matches or exceeds the performance of much larger models, including commercial systems like GPT-4o. Our code, datasets, and select models are publicly available.},
   author      = {Belouadi, Jonas and Ilg, Eddy and Keuper, Margret and Tanaka, Hideki and Utiyama, Masao and Dabre, Raj and Eger, Steffen and Ponzetto, Simone Paolo},
@@ -15,23 +31,6 @@
   selected    = {true},
   title       = {{TikZero}: Zero-Shot Text-Guided Graphics Program Synthesis},
   year        = {2025},
-}
-
-@misc{belouadi2025multimat,
-  abstract        = {Material node graphs are programs that generate the 2D channels of procedural materials, including geometry such as roughness and displacement maps, and reflectance such as albedo and conductivity maps. They are essential in computer graphics for representing the appearance of virtual 3D objects parametrically and at arbitrary resolution. In particular, their directed acyclic graph structure and intermediate states enable a modular, interpretable workflow for interactive appearance modeling. However, creating such graphs remains challenging and typically requires professional training. While recent neural program synthesis approaches attempt to simplify this process, they solely represent graphs as textual programs, failing to capture the inherently visual-spatial nature of node graphs that makes them accessible to humans. To address this gap, we present MultiMat, a multimodal program synthesis framework that leverages large multimodal models to process both visual and textual graph representations for improved generation of procedural material graphs. We train our models on a new dataset of production-quality procedural materials and combine them with a constrained tree search inference algorithm that ensures static correctness while efficiently navigating the program space. Our experimental results show that our multimodal program synthesis method is more efficient in both unconditional and conditional graph synthesis with higher visual quality and fidelity than text-only baselines, establishing new state-of-the-art performance.},
-  author          = {Belouadi, Jonas and Boubekeur, Tamy and Kaiser, Adrien},
-  url             = {https://arxiv.org/abs/2509.22151},
-  abbr            = {arXiv},
-  additional_info = {Preprint},
-  archivePrefix   = {arXiv},
-  bibtex_show     = {true},
-  eprint          = {2509.22151},
-  pdf             = {https://arxiv.org/pdf/2509.22151},
-  primaryClass    = {cs.CV},
-  month           = sep,
-  selected        = {true},
-  title           = {{MultiMat}: Multimodal Program Synthesis for Procedural Materials using Large Multimodal Models},
-  year            = {2025},
 }
 
 @inproceedings{belouadi2024detikzify,
