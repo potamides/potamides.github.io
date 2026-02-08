@@ -610,6 +610,12 @@ third_party_libraries:
       css: "https://cdn.jsdelivr.net/npm/venobox@{{version}}/dist/venobox.min.css"
       js: "https://cdn.jsdelivr.net/npm/venobox@{{version}}/dist/venobox.min.js"
     version: "2.1.8"
+  embedpdf:
+    integrity:
+      js: "sha256-JKB/J0iLHbb/DIaGRoyth+xIMEpxXioRPu+9KctwGq8="
+    url:
+      js: "https://cdn.jsdelivr.net/npm/@embedpdf/snippet@{{version}}/dist/embedpdf.js"
+    version: "2.5.0"
 
 # -----------------------------------------------------------------------------
 # Get external JSON data
