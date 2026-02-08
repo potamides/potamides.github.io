@@ -43,6 +43,7 @@ nav_order: 4
     type: 'container',
     target: document.getElementById('pdf-viewer'),
     src: '{{ site.url | append: site.baseurl | append: '/assets/pdf/' | append: site.cv_pdf }}',
+    pan: { defaultMode: 'always' },
     theme: getTheme()
   });
 
