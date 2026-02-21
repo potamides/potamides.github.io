@@ -615,7 +615,7 @@ third_party_libraries:
       js: "sha256-JKB/J0iLHbb/DIaGRoyth+xIMEpxXioRPu+9KctwGq8="
     url:
       js: "https://cdn.jsdelivr.net/npm/@embedpdf/snippet@{{version}}/dist/embedpdf.js"
-    version: "2.5.0"
+    version: "2.6.2"
 
 # -----------------------------------------------------------------------------
 # Get external JSON data
