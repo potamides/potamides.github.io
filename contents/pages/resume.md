@@ -44,6 +44,7 @@ nav_order: 4
     target: document.getElementById('pdf-viewer'),
     src: '{{ site.url | append: site.baseurl | append: '/assets/pdf/' | append: site.cv_pdf }}',
     pan: { defaultMode: 'always' },
+    disabledCategories: ['annotation'],
     theme: getTheme()
   });
 
@@ -58,4 +59,18 @@ nav_order: 4
   const registry = await viewer.registry;
   const ui = registry.getPlugin('ui').provides();
   ui.forDocument().closeToolbarSlot("top", "main");
+
+  // make link annotations navigate directly
+  const annotation = registry.getPlugin('annotation').provides();
+  annotation.onStateChange(({ documentId, state }) => {
+    if (state.selectedUids.length === 1) {
+      const selected = state.byUid[state.selectedUids[0]];
+      if (selected && selected.object.type === 2 && selected.object.target) { // 2 = LINK
+        const target = selected.object.target;
+        if (target.type === 'action' && target.action.type === 3) { // 3 = URI
+          window.open(target.action.uri, '_blank');
+        }
+      }
+    }
+  });
 </script>
