@@ -37,6 +37,7 @@
     src: 'https://belouadi.com/assets/pdf/cv.pdf',
     pan: { defaultMode: 'always' },
     disabledCategories: ['annotation'],
+    zoom: { defaultZoomLevel: 'fit-width' },
     theme: getTheme()
   });
 
@@ -53,13 +54,13 @@
   ui.forDocument().closeToolbarSlot("top", "main");
 
   // adapt PDF zoom to max width (see https://github.com/embedpdf/embed-pdf-viewer/issues/271)
-  const zoom = registry.getPlugin('zoom').provides();
+  const zoom = registry.getPlugin('zoom').provides(), zoomConfig = registry.getPluginConfig('zoom');
   const cm_to_pt = 72 / 2.54, max_width = parseFloat("930px");
   zoom.onZoomChange(({ documentId, level, viewport }) => {
-    if (level === 'fit-page' && viewport.width >= max_width + 2.8 * cm_to_pt) {
+    if (level === zoomConfig.defaultZoomLevel && viewport.width >= max_width + 2.8 * cm_to_pt) {
       const style = getComputedStyle(document.querySelector('.container'));
       const contentWidth = max_width - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
-      zoom.forDocument(documentId).requestZoom(contentWidth / 18.2 * cm_to_pt, { vx: 0, vy: 0 });
+      zoom.forDocument(documentId).requestZoom(contentWidth / (18.2 * cm_to_pt), { vx: 0, vy: 0 });
     }
   });
 
