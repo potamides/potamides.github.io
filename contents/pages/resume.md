@@ -45,6 +45,7 @@ nav_order: 4
     src: '{{ site.url | append: site.baseurl | append: '/assets/pdf/' | append: site.cv_pdf }}',
     pan: { defaultMode: 'always' },
     disabledCategories: ['annotation'],
+    zoom: { defaultZoomLevel: 'fit-width' },
     theme: getTheme()
   });
 
@@ -61,12 +62,13 @@ nav_order: 4
   ui.forDocument().closeToolbarSlot("top", "main");
 
   // adapt PDF zoom to max width (see https://github.com/embedpdf/embed-pdf-viewer/issues/271)
-  const zoom = registry.getPlugin('zoom').provides();
+  const zoom = registry.getPlugin('zoom').provides(), zoomConfig = registry.getPluginConfig('zoom');
+  const cm_to_pt = 72 / 2.54, max_width = parseFloat("{{ site.max_width }}");
   zoom.onZoomChange(({ documentId, level, viewport }) => {
-    if (level === 'fit-page') {
-      const s = getComputedStyle(document.querySelector('.container'));
-      const contentWidth = parseFloat("{{ site.max_width }}") - parseFloat(s.paddingLeft) - parseFloat(s.paddingRight);
-      zoom.forDocument(documentId).requestZoom(contentWidth / (18.2 / 2.54 * 72), { vx: 0, vy: 0 });
+    if (level === zoomConfig.defaultZoomLevel && viewport.width >= max_width + 2.8 * cm_to_pt) {
+      const style = getComputedStyle(document.querySelector('.container'));
+      const contentWidth = max_width - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      zoom.forDocument(documentId).requestZoom(contentWidth / (18.2 * cm_to_pt), { vx: 0, vy: 0 });
     }
   });
 
