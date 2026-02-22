@@ -60,6 +60,16 @@ nav_order: 4
   const ui = registry.getPlugin('ui').provides();
   ui.forDocument().closeToolbarSlot("top", "main");
 
+  // adapt PDF zoom to max width (see https://github.com/embedpdf/embed-pdf-viewer/issues/271)
+  const zoom = registry.getPlugin('zoom').provides();
+  zoom.onZoomChange(({ documentId, level, viewport }) => {
+    if (level === 'fit-page') {
+      const s = getComputedStyle(document.querySelector('.container'));
+      const contentWidth = parseFloat("{{ site.max_width }}") - parseFloat(s.paddingLeft) - parseFloat(s.paddingRight);
+      zoom.forDocument(documentId).requestZoom(contentWidth / (18.2 / 2.54 * 72), { vx: 0, vy: 0 });
+    }
+  });
+
   // make link annotations navigate directly
   const annotation = registry.getPlugin('annotation').provides();
   annotation.onStateChange(({ documentId, state }) => {
