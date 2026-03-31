@@ -35,7 +35,7 @@ ninja.data = [{
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/resume/";
+            window.location.href = "/cv/";
           },
         },{id: "post-reinforcement-learning-from-self-feedback-for-graphics-program-synthesis",
         
