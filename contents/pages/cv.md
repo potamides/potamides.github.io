@@ -4,86 +4,81 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 4
+scrollable: true
 ---
 
-<div id="pdf-viewer" style="height: 100vh; overflow: hidden;"></div>
+<style>
+  #pdf-viewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+  #pdf-viewer > canvas {
+    margin-inline: 0.5rem;
+  }
+</style>
 
-<script type="module">
-  import EmbedPDF from '{{ site.third_party_libraries.embedpdf.url.js }}';
+<div id="pdf-viewer"/>
 
-  function getTheme() {
-    const style = getComputedStyle(document.documentElement);
-    const theme = {
-      accent: {
-        primary: style.getPropertyValue('--global-theme-color')
-      },
-      background: {
-        app: style.getPropertyValue('--global-bg-color'),
-        surface: style.getPropertyValue('--global-bg-color'),
-        input: style.getPropertyValue('--global-card-bg-color')
-      },
-      foreground: {
-        primary: style.getPropertyValue('--global-text-color'),
-        secondary: style.getPropertyValue('--global-text-color-light')
-      },
-      border: {
-        default: style.getPropertyValue('--global-card-bg-color')
-      },
-      scrollbar: {
-        track: style.getPropertyValue('--global-divider-color'),
-        thumb: style.getPropertyValue('--global-text-color'),
-        thumbHover: style.getPropertyValue('--global-hover-text-color')
-      }
-    };
+<script id="script" type="module">
+  import * as pdfjsLib from "{{ site.third_party_libraries.pdfjs.url.js }}";
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "{{ site.third_party_libraries.pdfjs.url.worker }}";
 
-    return { preference: determineThemeSetting(), light: theme, dark: theme };
+  const url = "{{ site.url | append: site.baseurl | append: '/assets/pdf/' | append: site.cv_pdf }}";
+  const pdf = await pdfjsLib.getDocument(url).promise
+  const pages = [];
+
+  for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++){
+    pages.push(await pdf.getPage(pageNum));
+    drawPage(pages[pages.length - 1]);
   }
 
-  const viewer = EmbedPDF.init({
-    type: 'container',
-    target: document.getElementById('pdf-viewer'),
-    src: '{{ site.url | append: site.baseurl | append: '/assets/pdf/' | append: site.cv_pdf }}',
-    pan: { defaultMode: 'always' },
-    disabledCategories: ['annotation'],
-    zoom: { defaultZoomLevel: 'fit-width' },
-    theme: getTheme()
-  });
-
-  // add event listener to the theme toggle button
-  document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("light-toggle").addEventListener("click", function () {
-      viewer.setTheme(getTheme());
+  window.addEventListener("resize", () => {
+    const pdfViewer = document.getElementById("pdf-viewer");
+    const canvases = pdfViewer.querySelectorAll("canvas");
+    canvases.forEach((canvas, i) => {
+      drawPage(pages[i], canvas);
     });
   });
 
-  // close toolbars
-  const registry = await viewer.registry;
-  const ui = registry.getPlugin('ui').provides();
-  ui.forDocument().closeToolbarSlot("top", "main");
+  function getViewport(page, viewerWidth){
+    const style = getComputedStyle(document.querySelector(".container"));
+    const padding = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
 
-  // adapt PDF zoom to max width (see https://github.com/embedpdf/embed-pdf-viewer/issues/271)
-  const zoom = registry.getPlugin('zoom').provides(), zoomConfig = registry.getPluginConfig('zoom');
-  const cm_to_pt = 72 / 2.54, max_width = parseFloat("{{ site.max_width }}");
-  zoom.onZoomChange(({ documentId, level, viewport }) => {
-    if (level === zoomConfig.defaultZoomLevel && viewport.width >= max_width + 2.8 * cm_to_pt) {
-      const style = getComputedStyle(document.querySelector('.container'));
-      const contentWidth = max_width - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
-      zoom.forDocument(documentId).requestZoom(contentWidth / (18.2 * cm_to_pt), { vx: 0, vy: 0 });
-    }
-  });
+    // exclude pdf margins when computing the desired width
+    const desiredWidth = (21/18.2) * parseFloat("{{ site.max_width }}") - padding;
+    const pageWidth = page.getViewport({ scale: 1 }).width;
 
-  // make link annotations navigate directly
-  const annotation = registry.getPlugin('annotation').provides();
-  annotation.onStateChange(({ documentId, state }) => {
-    if (state.selectedUids.length === 1) {
-      const selected = state.byUid[state.selectedUids[0]];
-      if (selected && selected.object.type === 2) { // 2 = LINK
-        const target = selected.object.target;
-        queueMicrotask(annotation.forDocument(documentId).deselectAnnotation);
-        if (target && target.type === 'action' && target.action.type === 3) { // 3 = URI
-          window.open(target.action.uri, '_blank');
-        }
-      }
+    let scale = desiredWidth > viewerWidth ? viewerWidth / pageWidth : desiredWidth / pageWidth;
+    return page.getViewport({ scale: scale });
+  }
+
+  function drawPage(page, canvas){
+    const pdfViewer = document.getElementById("pdf-viewer");
+
+    if (canvas === undefined){
+      canvas = document.createElement("canvas")
+      pdfViewer.appendChild(canvas);
     }
-  });
+
+    const viewerWidth = pdfViewer.clientWidth - 2 * parseFloat(getComputedStyle(canvas).marginInline)
+    const viewport = getViewport(page, viewerWidth);
+    // Support HiDPI-screens.
+    const outputScale = window.devicePixelRatio || 1;
+
+    canvas.width = Math.floor(viewport.width * outputScale);
+    canvas.height = Math.floor(viewport.height * outputScale);
+    canvas.style.width = Math.floor(viewport.width) + "px";
+    canvas.style.height = Math.floor(viewport.height) + "px";
+
+    const transform = outputScale !== 1 ? [outputScale, 0, 0, outputScale, 0, 0] : null;
+
+    page.render({
+      canvasContext: canvas.getContext("2d"),
+      transform,
+      viewport,
+    });
+  }
 </script>

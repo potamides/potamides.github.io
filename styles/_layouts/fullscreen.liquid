@@ -13,14 +13,24 @@
       <meta http-equiv="refresh" content="3; url={{ redirect }}">
     {% endif %}
     {% include head.liquid %}
-    <style>
-      footer.fixed-bottom {position: static;}
-    </style>
+    {% if page.scrollable %}
+      <style>
+        body {padding-bottom: 0;}
+      </style>
+    {% else %}
+      <style>
+        footer.fixed-bottom {position: static;}
+        body {
+          height: 100%;
+          padding-bottom: 0;
+        }
+      </style>
+    {% endif %}
   </head>
 
   <!-- Body -->
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless
-      site.footer_fixed %}sticky-bottom-footer{% endunless %}" style="height:100%; padding-bottom: 0">
+      site.footer_fixed %}sticky-bottom-footer{% endunless %}">
     <!-- Header -->
     {% include header.liquid %}
 
@@ -33,5 +43,13 @@
     <!-- JavaScripts -->
     {% include scripts.liquid %}
     </div>
+
+    {% if page.scrollable %}
+      <script>
+        const footer = document.querySelector('footer');
+        const footerHeight = footer.offsetHeight;
+        footer.parentElement.style.paddingBottom = footerHeight + 'px';
+      </script>
+    {% endif %}
   </body>
 </html>
