@@ -614,6 +614,8 @@ third_party_libraries:
     url:
       js: "https://cdn.jsdelivr.net/npm/pdfjs-dist@{{version}}/legacy/build/pdf.min.mjs"
       worker: "https://cdn.jsdelivr.net/npm/pdfjs-dist@{{version}}/legacy/build/pdf.worker.min.mjs"
+      viewer: "https://cdn.jsdelivr.net/npm/pdfjs-dist@{{version}}/legacy/web/pdf_viewer.mjs"
+      css: "https://cdn.jsdelivr.net/npm/pdfjs-dist@{{version}}/legacy/web/pdf_viewer.css"
     version: "5.6.205"
 
 # -----------------------------------------------------------------------------
