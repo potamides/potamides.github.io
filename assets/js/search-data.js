@@ -75,14 +75,8 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-i-start-my-internship-at-the-national-institute-of-information-and-communications-technology-in-japan",
-          title: 'I start my internship at the National Institute of Information and Communications Technology...',
-          description: "",
-          section: "News",},{id: "news-our-work-detikzify-synthesizing-graphics-programs-for-scientific-figures-and-sketches-with-tikz-was-accepted-at-neurips-2024-as-a-spotlight-paper",
+            },},{id: "news-our-work-detikzify-synthesizing-graphics-programs-for-scientific-figures-and-sketches-with-tikz-was-accepted-at-neurips-2024-as-a-spotlight-paper",
           title: 'Our work “DeTikZify: Synthesizing Graphics Programs for Scientific Figures and Sketches with TikZ”...',
-          description: "",
-          section: "News",},{id: "news-i-start-my-internship-at-adobe-research-in-france",
-          title: 'I start my internship at Adobe Research in France.',
           description: "",
           section: "News",},{id: "news-our-work-tikzero-zero-shot-text-guided-graphics-program-synthesis-was-accepted-as-a-highlight-paper-at-iccv-2025",
           title: 'Our work “TikZero: Zero-Shot Text-Guided Graphics Program Synthesis” was accepted as a highlight...',
