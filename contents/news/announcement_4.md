@@ -1,9 +1,10 @@
 ---
 layout: post
-date: 2024-08-01
+date: 2026-01-25
 inline: true
 related_posts: false
 ---
 
-I start my internship at the [National Institute of Information and
-Communications Technology](https://www.nict.go.jp/en) in Japan.
+[Our paper](https://iclr.cc/virtual/2026/poster/10009540) "MultiMat: Multimodal
+Program Synthesis for Procedural Materials using Large Multimodal Models" was
+accepted at [ICLR 2026](https://iclr.cc/Conferences/2026)!

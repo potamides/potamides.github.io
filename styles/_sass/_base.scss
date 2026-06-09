@@ -17,6 +17,7 @@ li,
 span,
 strong {
   color: var(--global-text-color);
+  font-family: 'Iosevka Charon', sans-serif;
 }
 
 hr {
@@ -1391,7 +1392,7 @@ figure.cover {
   }
 
   figcaption.abandoned {
-    font-family: monospace;
+    font-family: 'Iosevka Charon Mono', monospace;
     color: #23212d;
     text-transform: uppercase;
     background-color: #ee5f5b;
@@ -1399,28 +1400,28 @@ figure.cover {
 
   figcaption.finished,
   figcaption.watched {
-    font-family: monospace;
+    font-family: 'Iosevka Charon Mono', monospace;
     color: #23212d;
     text-transform: uppercase;
     background-color: #62c462;
   }
 
   figcaption.interested {
-    font-family: monospace;
+    font-family: 'Iosevka Charon Mono', monospace;
     color: #23212d;
     text-transform: uppercase;
     background-color: #7691db;
   }
 
   figcaption.paused {
-    font-family: monospace;
+    font-family: 'Iosevka Charon Mono', monospace;
     color: #23212d;
     text-transform: uppercase;
     background-color: #bdac7e;
   }
 
   figcaption.queued {
-    font-family: monospace;
+    font-family: 'Iosevka Charon Mono', monospace;
     color: #23212d;
     text-transform: uppercase;
     background-color: #9e76b5;
@@ -1428,7 +1429,7 @@ figure.cover {
 
   figcaption.reading,
   figcaption.watching {
-    font-family: monospace;
+    font-family: 'Iosevka Charon Mono', monospace;
     color: #23212d;
     text-transform: uppercase;
     background-color: #f89406;
@@ -1436,14 +1437,14 @@ figure.cover {
 
   figcaption.reread,
   figcaption.rewatch {
-    font-family: monospace;
+    font-family: 'Iosevka Charon Mono', monospace;
     color: #23212d;
     text-transform: uppercase;
     background-color: #a6517d;
   }
 
   figcaption.uncategorized {
-    font-family: monospace;
+    font-family: 'Iosevka Charon Mono', monospace;
     color: #23212d;
     text-transform: uppercase;
     background-color: #b0abb3;
