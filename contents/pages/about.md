@@ -29,8 +29,9 @@ learning for 3D generative modeling and design. I received my PhD with highest
 distinction from the [University of Mannheim](https://www.uni-mannheim.de/en),
 where my research focused on the limitations of large language models in
 resource-constrained multimodal and multilingual settings. I hold both a
-Bachelor's and a Master's degree (with honors) in Computer Science from the
-[Technical University of Darmstadt](https://www.tu-darmstadt.de/index.en.jsp).
+Master's degree with honors and a Bachelor's degree in Computer Science from
+the [Technical University of
+Darmstadt](https://www.tu-darmstadt.de/index.en.jsp).
  
 In general, my research interests lie at the intersection of [multimodal
 learning](https://en.wikipedia.org/wiki/Multimodal_learning),
