@@ -46,15 +46,13 @@
   - firstname: ["Christoph"]
     url: https://scholar.google.com/citations?user=WCoiKVsAAAAJ
 
-"zhang":
-  - firstname: ["Ran"]
-    url: https://scholar.google.com/citations?user=deo40O0AAAAJ
-
 "larionov":
   - firstname: ["Daniil"]
     url: https://scholar.google.com/citations?user=kvsOlOQAAAAJ
 
 "zhang":
+  - firstname: ["Ran"]
+    url: https://scholar.google.com/citations?user=deo40O0AAAAJ
   - firstname: ["Leixin"]
     url: https://scholar.google.com/citations?user=dTRy2gUAAAAJ
 
