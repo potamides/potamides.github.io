@@ -1,3 +1,7 @@
+"A&C":
+  url: https://www.tandfonline.com/journals/tarc20
+  color: "#001f83"
+
 "ACL":
   url: https://aclweb.org
   color: "#cc241d"
@@ -12,11 +16,15 @@
 
 "arXiv":
   url: https://arxiv.org
-  color: "#cc241d"
+  color: "#1c1a17"
 
 "ICLR":
   url: https://iclr.cc
   color: "#98971a"
+
+"MADOC":
+  url: https://madoc.bib.uni-mannheim.de
+  color: "#232e58"
 
 "NeurIPS":
   url: https://neurips.cc
