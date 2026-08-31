@@ -50,10 +50,6 @@
   - firstname: ["Ran"]
     url: https://scholar.google.com/citations?user=deo40O0AAAAJ
 
-"zhang":
-  - firstname: ["Ran"]
-    url: https://scholar.google.com/citations?user=deo40O0AAAAJ
-
 "larionov":
   - firstname: ["Daniil"]
     url: https://scholar.google.com/citations?user=kvsOlOQAAAAJ
@@ -77,3 +73,11 @@
 "zhao":
   - firstname: ["Zhixue"]
     url: https://scholar.google.com/citations?user=bwiMxxsAAAAJ
+
+"rocha":
+  - firstname: ["Gil"]
+    url: https://scholar.google.com/citations?user=Vbw_-e8AAAAJ
+
+"cardoso":
+  - firstname: ["Henrique Lopes", "Henrique"]
+    url: https://scholar.google.com/citations?user=6EINAs8AAAAJ
