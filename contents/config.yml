@@ -79,8 +79,6 @@ cv_pdf: cv.pdf
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Jonas' Blog
-blog_description: research insights, personal projects, and more
 permalink: /blog/:year/:title/
 lsi: false
 
