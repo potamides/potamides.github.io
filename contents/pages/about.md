@@ -24,13 +24,13 @@ latest_posts:
 ---
 
 I am a Senior AI Research Scientist at [Autodesk
-Research](https://www.research.autodesk.com), specializing in multimodal deep
-learning for 3D generative modeling and design. I received my PhD with highest
-distinction from the [University of Mannheim](https://www.uni-mannheim.de/en),
-where my research focused on the limitations of large language models in
-resource-constrained multimodal and multilingual settings. I hold both a
-Master's degree with honors and a Bachelor's degree in Computer Science from
-the [Technical University of
+Research](https://www.research.autodesk.com), specializing in multimodal
+language modeling for 3D generative modeling and computer-aided design (CAD). I
+received my PhD with highest distinction from the [University of
+Mannheim](https://www.uni-mannheim.de/en), where my research focused on large
+language models in resource-constrained multimodal and multilingual settings. I
+hold both a Master's degree with honors and a Bachelor's degree in Computer
+Science from the [Technical University of
 Darmstadt](https://www.tu-darmstadt.de/index.en.jsp).
  
 In general, my research interests lie at the intersection of [multimodal
