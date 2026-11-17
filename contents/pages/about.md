@@ -25,7 +25,7 @@ latest_posts:
 
 I am a Senior AI Research Scientist at [Autodesk
 Research](https://www.research.autodesk.com), specializing in multimodal
-language modeling for 3D generative modeling and computer-aided design (CAD). I
+language models for 3D generative modeling and computer-aided design (CAD). I
 received my PhD with highest distinction from the [University of
 Mannheim](https://www.uni-mannheim.de/en), where my research focused on large
 language models in resource-constrained multimodal and multilingual settings. I
